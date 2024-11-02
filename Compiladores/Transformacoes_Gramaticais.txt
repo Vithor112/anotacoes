@@ -1,0 +1,20 @@
+Transformações Gramaticais:
+
+Servem para remover características da Gramática sem alterar sua Linguagem 
+
+Elminação de produções vazias:
+
+Remove as produções que levam a símbolos vazios da linguagem. 
+Reune-se todos os Símbolos não terminais que geram vazio, inclusive de forma indireta.
+Constrói-se um novo conjunto de produções, onde as produções que levam a símbolos não terminais do primeiro conjunto só são adicionadas se no corpo da produção possuem outros símbolos que não estão presentes no primeiro conjunto. Também é adicionado uma versão sem o símbolo não terminal do primeiro conjunto do corpo ( como-se o símbolo não terminal tivesse virado vazio implicitamente ). Esse processo é feito iterativamente até o conjunto não mudar. 
+No final pode-se adicionar a produção vazia do símbolo inicial. Para aceitar a palavra vazia também. 
+
+Eliminação da Recursividade a esquerda direta:
+
+Cria-se um novo símbolo não terminal que vai levar a 2 corpos possíveis X -> alpha | alphaX, onde alpha é um conjunto de símbolos terminais e X é o novo símbolo não terminal. Transforma-se então a recursividade a esquerda em recursividade a direita. 
+
+
+Fatoração gramatical:
+
+Cria-se um novo símbolo não terminal que possui produções que levam aos sufixos possíveis da palavra.
+

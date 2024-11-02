@@ -1,0 +1,37 @@
+Análise Ascendente:
+
+Aplica reduções na entrada tentando obter o Símbolo inicial. Se obter o símbolo inicial consumindo toda entrada então a entrada é válida
+
+Análise Ascendente características:
+
+Aceita recursão à esquerda e convive bem com a recursão a direita. Abrange um número maior de gramáticas. Seu funcionamento ocorre com pilha e reduções com a poda do handle.
+
+Processo de Redução:
+
+Processo de substituição do corpo pela cabeça. Como se desfazesse uma produção/derivação.
+
+Handle:
+
+É uma subcadeia de símbolos que casa com o corpo de uma produção, quando efetuada sua redução, garante a derivação mais a direita.
+S ⇒* α A ω ⇒ α β ω
+Então, β é um handle de α β ω
+(sendo que ω contém apenas símbolos terminais)
+
+Poda do Handle:
+
+Reverte-se um passo de uma derivação mais a direita. Usando-se o handle. Para gramáticas ambíguas, mais de um handle é possível, por causa que mútliplas derivações a direita são possíveis
+
+Como detectar Handlers?
+
+Com Análise LR, executando o algoritmo Empilha-Reduz. Uma pilha, um buffer de entrada, e uma tabela com ações/transições, Empilhar coloca um token de entrada na pilha, Reduz, realiza a poda do handle do topo na pilha. E aceita, reconhece a setença de Entrada (entrada vazia e pilha com símbolo inicial). Caso contrário Lança um erro sintático
+
+Conflitos no Algoritmo Empilha Reduz:
+
+Podem ser Conflitos Reduz-Reduz onde mais de uma redução é possível e Conflito Empilha-Reduz: Onde é válido tanto empilhar quanto reduzir.
+
+Significado de Análise LR:
+
+Entrada é lida da esquerda para direita, aplicando-se reduções que desfazem derivações a direita.
+É um autômato de estados finitos com pilha, onde cada estado representa uma possível entrada que pode estar na pilha, a tabela de ações pode empilhar um estado ou reduzir ou realizar uma transição para outro estado, a transição é decidida pelo símbolo lido na entrada ou pelo símbolo gerado pela redução
+
+

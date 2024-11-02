@@ -1,0 +1,77 @@
+Problema de IA, como modela-lo:
+
+Envolvem 3 fatores, medidas de perfomance do agente, modelo de agente ( ações que ele consegue fazer e o que agente consegue reconhecer  ), modelo de ambiente ( o que é relavante, como o ambiente reage as ações do agente e o que ambiente envia ao agente de informação )
+
+Classificação do Ambiente:
+
+Estático ou Dinâmico ( ambiente muda enquanto o agente decide a próxima ação ) 
+Single Agent ou Multiple Agent ( ambiente possui um ou mais de um agentes )
+Determinístico, não determinístico e estocástico ( se o próximo estado do ambiente é totalmente 
+determinado pela ação do agente, e se não for, se ele é afetado por randomização )
+Observável, parcialmente observável e não observável ( se o agente consegue obter todas as informações 
+do ambiente a todo momento )
+Discreto ou Contínuo
+
+Estocástico:
+
+Afetado por randomização
+
+
+Formas de solucionar um problema de IA:
+
+Criar algorimo específico para o dominio do problema
+Usar um solver, descrevendo o problema para o modelo do solver
+Usar experiência/aprendizado, e.g, algoritmo de Machine Learning
+
+Resolução de problemas com Solvers:
+
+Converter o ambiente para um modelo, que vai caracteriza-lo matematicamente através de uma linguagem
+definida para descreve-lo de forma compacta, e os algoritmos usaram esses modelos para entender a 
+estrutura do problema e encontrar soluções
+
+Problema de busca em espaço de estados:
+
+São problemas dificeis (NP-Completo), que são definidos por um estado inicial, um número de ações
+que leva a outros estados e um estado objetivo que deve ser alcançado. O Objetivo do agente é atingir o objetivo com o custo mínimo.
+
+Classificação do Problema de busca em espaço de estados:
+
+Um  único agente, num ambiente estático, discreto, determinístico e totalmente observável
+
+Definição matemática de um problema de espaço estado:
+
+É definido por uma tupla de 6 elementos:
+S um conjunto finito de estados
+A um conjunto finito de ações 
+cost: Uma função que recebe uma ação e retorna um número real não negativo que representa um custo
+s0: um estado inicial, que existe em S
+S*: um conjunto de estados objetivos, subconjunto de S
+T: uma relação de transição que liga um estado atual, uma ação e o próximo estado ( se o estado atual e a ação estiveram ligados a um único próximo estado. (representado por s ->a s')
+
+O que significa estado predecessor, ação aplicável e estado sucessor?
+
+Dado a transição  s ->a s', s é o predecessor de s' e s' é o sucessor de s, e a é aplicável em s. 
+
+Caminho:
+
+Conjunto de ações que levam de um estado s0 para estado sn, seu comprimento é igual ao número de ações que possui e seu custo é igual a soma dos custos das ações
+
+Solução e Soluação ótima:
+
+São caminhos que começam em s0 e vão para algum estado que existe em S*, e é uma solução ótima se 
+o custo do caminho for mínimo 
+
+Representação de Espaço-Estado explicita:
+
+Guarda todos os estados possíveis em memória, pode ser resolvida com Djikistra e geralmente não é 
+aplicavel para maioria dos problemas
+
+Representação de Espaço-Estado declarativa:
+
+Representada implicitamente através de um formalismo matemático que é usado para gerar o espaço de estados sem armazenar todos eles em memória.
+
+Representação de Espaço-Estado black-box: 
+
+Representada através de uma função que dado um estado atual e uma ação retorna um sucessor sem 
+mostrar como isso é feito. 
+

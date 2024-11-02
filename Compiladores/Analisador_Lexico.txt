@@ -1,0 +1,67 @@
+Compilador, definição forte:
+
+É um programa de computador que transforma uma linguagem de alto nível qualquer em uma linguagem de máquina de uma determinada arquitetura
+
+Compilador, definição fraca:
+
+Programa de computador que transforma uma linguagem de alto nível em outra linguagem qualquer.
+
+Diferença de Compilador e Interpretador:
+
+Interpretador lê e traduz o código linha por linha para linguagem de máquina para que possa ser executado
+Interpretador não detecta erros até chegar na linha, então problemas no final do fluxo de execução demorarão para serem encontrados
+Interpretador não é eficiente, pois por exemplo em loops tem que traduzir para linguagem de baixo nível a cada repetição
+Interpretador não consegue otimizar o código, pois tem que traduzi-lo para linguagem de máquina rapidamente, compilador pode levar o tempo que quiser
+Programas de linguagens interpretadas não são portáveis sem o interpretador, ele é necessário para sua execução
+
+Etapas do processo de tradução:
+
+Pré-Processador, faz edições no programa mas o mantém na linguagem de alto nível, compilador então compila para assembly, que passa por um montador para se tornar código de máquina, por um ligador para agrupar 
+bibliotecas, rotinas ( podendo ser feito de forma estática ou dinâmica ) e por fim por um carregador que coloca o código executável em memória.
+
+Etapas do processor de compilação:
+
+É feito a Análise Léxica, Sintática e Semântica. Isso seria o Front End do compilador. Então no BackEnd é gerador um código intermediário, otimizaçãod o código que não depende da arquitetura, geração de códiog para a arquitetura e otimização do código para a arquitetura utilizada. 
+
+Análise Lexical de um compilador: 
+
+Recebe um fluxo de caracteres e deve identificar sequências que tem um significado para linguagem ( lexemas ), que se torna um token. É também responsável por iniciar a construção da tabela de símbolos e
+identificar erros léxicos.
+
+Token gerado pela análise léxica:
+
+Composto de um nome e de um valor ( valor depende dos caracteres reconhecidos do lexema ) 
+
+Exemplos de tipos de tokens:
+
+Palavras-chave, Operadores, Identificadores, Constantes, Literais, Símbolos
+
+Por que separar a análise léxica da sintática?
+
+Simplifica o analisador sintático gerando um projeto mais limpo, permite utilizar técnicas especializadas e buferizar tudo. Também isola do análisador sintático a formatação e codificação da entrada, unificando
+o que ele deve tratar.
+
+Como é implementado a análise léxica de um arquivo?
+
+Com um par de buffers, um usado para andar até encontrar um lexema, e outro para marcar o fim de um lexema já processado. Também são utilizados sentinelas para demarcar o fim do buffer e da entrada.
+
+ O que o Analisador Lexical usa para identificar lexemas?
+ 
+ Expressões regulares
+ 
+ Operadores de Expressões regulares
+ 
+Concatenação: xy (x seguido de y)
+Alternação: x|y (x ou y)
+Repetição: x* (x repetido 0 ou mais vezes)
+Repetição: x+ (x repetido 1 ou mais vezes)
+
+Qual a precedência e associação das expressão regulares?
+
+Precedência (da maior para a menor, na ordem)
+Repetição
+Concatenção
+Alternação
+Sempre associativo à esquerda
+
+

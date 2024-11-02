@@ -1,0 +1,76 @@
+Classificação de falhas pela fase de criação:
+
+- Falha de desenvolvimento (produção, projetização, design)
+- Falha operacionais (aparece com tempo de uso, desgaste, ocorre na operação contínua)
+
+Classificação de falhas pelos limites do sistema:
+
+- Falha interna -> origem dentro do sistema
+- Falha externa -> origem por interação ou interferência com ambiente externo ao ambiente (radiação, ruídos, etc... )
+
+Classificação de falhas pela causa fenomenológica:
+
+- Falhas naturais
+- Falhas humanas
+
+Classificação de falhas pela dimensão:
+
+- Falha de hardware
+- Falha de software
+
+Classificação de falhas pelo objetivo:
+
+- Falha maliciosa
+- Falha não maliciosa
+
+Classificação de falhas pela persistência:
+
+- Permanente: presença contínua no tempo
+- Temporária: presença limitada no tempo
+
+Classificação de falhas pela capacidade:
+
+- Falhas Acidentais
+- Falha devida a incompetência
+
+Classificação de falhas pela fase de intenção
+
+- Falhas deliberadas
+- Falhas não delibederadas
+
+Grupos de falhas:
+
+Falhas de desenvolvimento, falhas externas, falhas físicas
+
+Tipos de defeitos:
+
+Serviço, desenvolvimento, (dependabilidade e segurança)
+
+Defeitos de serviço:
+
+Quando o sistema não oferece o sistema que deveria fornecer (especificação com falhas pode causar isso)
+
+Classificações defeitos de serviço:
+
+Domínio (não cumpre faixa de tempo e o conteúdo entregue)
+Detectabilidade: defeito sinaizado e defeito não sinalizado
+Consistêncoa: defeitos consistentes ou bizantinos
+Consequências: defeitos mínimos e catastróficos
+
+Modos de defeitos ( forma de sistemas controlar situações de defeitos ):
+
+Fail-halt (defeito de parada, sistema trava)
+Fail-passive (só um dos serviços é travado, ao invés de travar o sistema)
+Fail-silent (corrige o defeito ou desvia o fluxo para evitar que o usuário perceba)
+Fail-safe (só trata defeitos com uma severidade grande, e deixa os defeitos com severidade mínima se manifestar)
+
+Classificação de erros:
+
+Considera-se os defeitos que geraram, a falha que o originou, número de bits afetados 
+
+
+
+
+
+
+

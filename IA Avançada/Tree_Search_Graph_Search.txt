@@ -1,0 +1,68 @@
+Quais são as estruturas de dados utilizadas por algoritmos de busca de estados?
+
+Search Node, Open list e closed list. 
+
+Definição de search node:
+
+Armazenam um estado que foi alcançado, como ele foi alcançado (ação e nodo predecessor) e o custo do caminho do caminho do estado inicial até ele. 
+
+Search Tree:
+
+Conjunto de Search nodes
+
+Otimizações possíveis em um Search node:
+
+Lazy Evaluation: O estado não é gerado, só armazenado implicitamente usando seu predecessor
+Compressão de informação para diminuir o custo de espaço de armazenar vários estados
+
+Open List ou Frontier:
+
+Organiza as folhas da search tree, ou seja os nodos não expandidos. Possui 2 operações, determinar e remover o próximo nodo a ser expandido e inserir novos nodos que são candidatos a expansão 
+Geralmente não devem ser implementadas como listas, geralmente implementada como Priority Queue. A operação de determinação deve ser bem eficiente, se possível constante. 
+
+Interface de uma Open List:
+
+IsEmpty, pop ( remove e retorna próximo nodo a ser expandido ), insert ( insere novo candidato a expansão na lista )
+
+Closed List:
+
+Lembra dos estados expandidos para evitar expansões duplicadas do mesmo estado. Geralmente implementado como um HashSet
+
+Interface de uma Closed List:
+
+Insert ( inserir um nodo que não estava na closed List ), test ( testar se o nodo com o estado X já está na closed List ) 
+
+Classe Abstratas de algoritmos de busca de estados: 
+
+Tree Search e Graph Search
+
+Características do Tree Search:
+
+Utiliza uma open list. Cada nodo possui um caminho único para seu estado que leva até o nodo inicial, ou seja, uma árvore. Como utilizamos uma open list é possível ter nodos repetidos e logo a
+profundidade da árvore pode tender ao infinito.
+
+Ideia básica de um algoritmo de Tree Search
+
+Faz um pop na open list obtendo um nodo, checa se ele é um estado objetivo, se for, retorna o caminho para ele ( solução ). Caso contrário obtém os estados sucessores com uma função que pode black-box ou com geração implicita e então para cada estado sucessor, cria um nodo com o estado sucessor, estado predecessor e ação usada e o insere na open list. Faz isso até a open list ficar vazia e caso fique o problema é insolucionável.
+
+Características do Graph Search: 
+
+Usa uma closed list além da open list, logo reconhece duplicada. Cada nodo corresponde a um estado atingível e pode possuir múltiplos caminhos possíveis para si. Logo o número de estados possíveis é limitado e portanto a profundidade da árvore também é. Alguns algoritmos podem não eliminar as duplicadas imediatamente, o que é chamado delayed duplicate detection
+
+Ideia básica de um algoritmo Graph Search: 
+
+Faz um pop na open list obtendo um nodo, verifica se ele já foi expandido utilizando a closed list, se for só ignora e segue a próxima iteração, caso não for, adiciona na closed list, e checa se ele é um estado objetivo, se for, retorna o caminho para ele ( solução ). Caso contrário obtém os estados sucessores com uma função que pode black-box ou com geração implicita e então para cada estado sucessor, cria um nodo com o estado sucessor, estado predecessor e ação usada e o insere na open list. Faz isso até a open list ficar vazia e caso fique o problema é insolucionável.
+
+Critérios para classificar um algoritmo de busca de estado:
+
+Completude (Completo ou semi-completo ou nenhum) -> Algoritmo completo termina sempre, semi-completo termina quando existe solução
+Ótimo -> A solução que retorna é sempre ótima
+complexidade de tempo e espaço medido pela profundidade da árvore e nodos que foram expandidos/fator de ramificação.
+
+Critérios para o Tree Search:
+
+Não é completo, nem semi-completo, nem ótimo e possui uma complexidade de tempo e espaço unbounded ( tendendo ao infinito )
+
+Critérios para o Graph Search:
+
+É completo, não é ótimo, e tem uma complexidade de tempo e espaço é limitado pelo número de espaços e transições

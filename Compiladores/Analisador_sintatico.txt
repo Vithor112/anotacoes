@@ -1,0 +1,84 @@
+Análise Sintática, funções:
+
+Verificar ordem dos tokens do programa e emitir erros sintáticos caso estejam incorretos e caso estejam corretos construir a árvore de derivação. 
+
+Como o analisador sintático é configurado?
+
+Através de uma definição de uma gramática livre de contexto. 
+
+Algoritmos sintáticos descendentes, funcionamento:
+
+Partem da raíz da gramática e tentam obter a entrada. Existe 2 tipos, preditivo e força bruta. Não funcionam para linguagens com recursão a esquerda. 
+
+Algoritmos sintáticos ascendentes, funcionamento:
+
+Partem da entrada, realizando reduções para tentar obter a raíz da gramática. Se for obtida sem nenhuma parte da entrada sobrando, então o programa está sintaticamente correto. 
+
+Objetivos do Tratamento de erros sintáticos:
+
+Informar o erro de forma clara e precisa, e conseguir se recuperar do erro para continuar analisando a entrada e detectar mais erros caso existam e não aumentar demasiadamente o custo computacional quando a entrada é correta. 
+
+Estratégias do tratamento de erros: 
+
+Modo Pânico: Descarta tokens até um token de sincronismo, geralmente o token que demarca o final da linha como ';'. É fácil de implementar porém não detecta outros erros que possam existir na linha.
+Recuperação em nível de frase: Tenta substituir, inserir ou remover um token para conseguir analisar o resto da linha. Deve-se tomar cuidado para não entrar em recursão infinita. 
+Produção de Erros: Cria-se regras gramaticais para capturar erros comuns
+Correção Global: Tenta encontrar o programa válido mais correto e com menos mudanças da entrada inválida. Não é usado, pois pode mudar a semântica do programa. 
+
+Definição de uma Gramática Livre de contexto:
+
+Tupla de símbolos terminais, não terminais, símbolo inicial e produções gramaticais.
+
+Símbolos Terminais:
+
+Símbolos que não podem ser mais derivados, no contexto de uma linguagem de programação são os tokens da linguagem.
+
+Símbolos Não terminais: 
+
+Símbolos sintáticos que podem ser derivados.
+
+Simbolo inicial:
+
+Símbolo não terminal que é a raiz da gramática e a partir dele é possível geral todas as frases possíveis que pertencem a gramática.
+
+Produções Gramaticais: 
+
+Define um passo de derivação possível,  no lado esquerdo temos um Símbolo não terminal seguido de uma flecha e no lado direito temos o corpo da produção gramatical com uma sequÊncia de símbolos Terminais e Não terminais.
+
+Linguagem Gerada:
+
+Conjunto de todas as sentenças a partir do símbolo inicial
+
+Derivação mais a esquerda ou mais a direita:
+
+Em alguns momentos é possível obter uma setença de diferentes formas. A abordagem mais a esquerda prioriza realizar as produções gramaticais dos símbolos Não terminais mais a esquerda da sentença. A mesma lógica se aplica para a direita. 
+
+Árvores de Derivação:
+
+Representação gráfica do processo de derivação, Mostra a ordem na qual as produções são aplicadas. A Raiz da árvore é o símbolo inicial da gramática, nodos não folhas são símbolos não terminais e as folhas são símbolos terminais e a palavra vazia.
+
+Gramáticas Ambíguas:
+
+Mais de uma árvore de derivação para a mesma sentença, utilizando somente um tipo de derivação ( Derivação mais a esquerda por exemplo ). Característica indesejada.
+
+Gramática sem ciclos: 
+
+Gramáticas em que não podemos obter a cabeça de uma produção gramatical realizando um ou mais passos de derivação. Ou seja, depois de um ou mais passos, não podemos retornar ao lado esquerdo da produção gramatical.
+
+Gramática  livre de produções vazias: Inexistência de produções que levam um símbolo não terminal para o símbolo vazio. Exceto o símbolo inicial que pode ser levado para a palavra vazia unicamente.
+
+forma sentencial:
+
+Conjunto de Símbolos Terminais
+
+Gramática não Fatorada à Esquerda:
+
+Gramática onde múltiplas produções possuem corpos que compartilham uma forma setencial comum a esquerda ( Conjunto de símbolos terminais ). Ou seja, possuem um prefixo terminal comum.
+
+Gramática Recursiva a esquerda:
+
+Gramática cuja a cabeça de uma produção gramatical pode ser derivada em um ou mais passos em um corpo que contém a cabeça da produção gramatical como o símbolo mais a esquerda. Impossbilita análise descendente
+
+
+
+

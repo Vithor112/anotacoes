@@ -1,0 +1,42 @@
+Algoritmo de busca Heuristica:
+
+Algoritmos que usam heuristicas para determinar parcialmente ou totalmente quais nodos expandir
+
+Best First search:
+
+Expande o nodo mais promissor em cada iteração, implementado basicamente como Uniform Cost Search, porém para determinar o custo usamos f, que é uma função que usa heurística e talvez mais outras coisas. Expandimos sempre o estado com menor f
+
+Classes de Best First Search:
+
+Determinado pela forma que f avalia o custo do estado:
+Greedy Best-First Search: Considera apenas a heurística para o valor de f(s) = h(s)
+A*: Considera a heurística mais o peso do caminho do estado (g). f(s) = g(s) + h(s)
+Weighted A*: Considera o peso do caminho mais a heurística ponderada com um peso real f(s) = g(s) + w * h(s).
+
+Ponderações sobre o valor do peso no Weighted A*:
+
+Se w for 0, temos Uniform Cost Search
+Se w tender ao infinito temos Greedy Best Firsth Search
+Se w = 1 temos A*
+
+Best First Search geralmente é implementado com graph search ou tree search?
+
+Geralmente com graph search 
+
+Qual modificação é necessária para tornar UCS em um Best First Search?
+
+Trocar a ordenação da priority queue de g para f
+
+Otimizações possíveis do Best First Search:
+
+- Descartar estados insolucionáveis (estados que tem h infinito, necessário que h seja safe)
+- Usar algum desempate para quando f tem o mesmo valor. Geralmente é usado o menor valor de h.
+
+Propriedades Graph Best First Search:
+
+Completo se h é safe e é implementado como graph search
+Otimalidade depende do f utilizado
+
+Reopening definição e necessidade:
+
+Greedy Best First search possui reopening? Por quê?

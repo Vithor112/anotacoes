@@ -1,0 +1,16 @@
+Conjunto Sequência de A:
+
+Sendo A não terminal, é o conjunto de terminais que aparecem imediatamente após o A.
+S ⇒∗ αAaβ, a é um conjunto de terminais a. E alpha e Beta são forma setenciais.
+
+
+Algoritmo Conjunto Sequencial:
+
+Se A é o NT inicial, acrescente $
+Se houver X → αAβ, acrescente Primeiro(β) exceto o vazio
+(note que vazio nunca fará parte de conjuntos Sequência)
+Se houver X → αA, acrescente Sequência(X)
+Se houver X → αAβ e Primeiro(β) contém vazio, acrescente Sequência(X)
+Aplicar as regras iterativamente até que nenhum conjunto mude de tamanho
+
+

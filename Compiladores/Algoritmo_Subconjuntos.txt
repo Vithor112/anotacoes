@@ -1,0 +1,19 @@
+Algoritmo de Subconjuntos usos:
+
+Converte Automâto não determinístico em um Automâto determinísitico
+
+Fechamento-Vazio de um estado s:
+
+Conjunto de todos os estados alcançáveis  através de transições vazias a partir de s incluido s.
+
+Fechamento vazio de um subconjunto de estados S:
+
+Realiza-se o fechamento vazio para cada estado do subconjunto e os une. 
+
+Movimento(s,a):
+
+Estados alcançáveis a partir do estado s com a transição do símbolo a, incluído os estados alcançáveis com transições vazias após a realização da transição com símbolo a. 
+
+Funcionamento de Algoritmo de Subconjuntos:
+
+Calcula-se o fechamento vazio do estado inicial da AFND. Com esse subconjunto obtido, cria-se um novo estado, que será o estado inicial da AFD gerada. Agora, para cada símbolo da linguagem realize-se o Movimento para cada estado de cada subconjunto existente, caso o subconjunto obtido seja diferente (subconjunto com quantidade diferentes ou com estados estados diferentes), cria-se um novo estado com transição do símoblo do movimento feito, caso já exista, apenas cria-se a transição. Se o subconjunto possui algum estado final da AFND então ele vai ser um estado final da AFD também. 

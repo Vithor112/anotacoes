@@ -1,0 +1,23 @@
+Motivação Heuristicas:
+
+Diferenciar estados ruins de estados bons para poupar espaço, pois priorizamos estados promissores.
+
+Definição de uma função heuristica:
+
+Função que recebe um estado s e retorna um número real não negativo ou infinito. A função estima o custo do caminho do estado ao estado objetivo mais próximo. Então, quanto menor o valor de h(s) mais promissor o estado s é. Se retorna infinito, logo o estado é insolucionável. 
+
+Heurística perfeita:
+
+Mapeia cada estado para um solução ótima para o estado. Ou seja, sempre retorna o custo do menor caminho a um estado objetivo. Representada por h star (h*)
+
+Propriedades de uma heuristica:
+
+- Safe: Se retorna infinito somente para estados que sejam insolucionáveis.
+- Goal-Aware: Se retorna 0 para todos os estados objetivos. Ou seja s é objetivo implica que h(s) = 0 se for goal-aware.
+- Admissible: Se o valor retornado para todos os estados for igual ou menor que o caminho ótimo dele. Nunca exagera o custo de um caminho para algum estado
+- Consistente: O valor retornado para um estado antecessor nunca pode ser maior que o custo da transição e o valor do estado predecessor. Ou seja, nunca pode diminuir o valor do estado seguinte a um valor superior a da transição executada. 
+
+Conexões entre as propriedades:
+
+Se é admissivel então é Safe e goal aware
+Se é goal aware e consistente então é admissivel

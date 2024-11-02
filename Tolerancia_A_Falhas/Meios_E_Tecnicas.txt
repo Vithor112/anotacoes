@@ -1,0 +1,40 @@
+Formas de alcançar dependabilidade:
+
+Com tolerância a falhas, prevenção, remoção de falhas ou previsão de falhas.
+
+Remoção de falhas definição:
+
+Pode ser feita na fase de desenvolvimento ou na fase de uso com reparos corretivos ( Bugs são encontrados e afetam o usuário ), reparos preventivos ( Antes dos bugs afetarem o usuário, mas depois do deploy )
+
+Previsão de falhas definição:
+
+Estima-se a presença de falhas e suas consequências. Pode ser feita qualitativamente ( listando e classificando defeitos ) ou probabilisticamente ( é mesurado as chances dos defeitos ocorrem, e o níveis de dependabilidade ). 
+
+Prevenção de falhas definição:
+
+Utilização de melhores técnicas e componentes para evitar a introdução de falhas.
+
+Técnicas de TF:
+
+Baseada em 2 branches, detecção de erros (antes do defeito) e após, a recuperação do erro.
+
+Técnicas de detecção de erros:
+
+Feito através de uma função black box que acompanha o estado do sistema para verificar se ele está em um estado errôneo. Pode ser feita de forma concorrente ou de forma preemptiva ( para o sistema para fazer a verificação )
+
+Formas de implementar a função de detecção de erros:
+
+Duplicação do sistema e comparação se ambos estão com o mesmo estado. Testes  de limite de tempo, reversos ( verificar se o resultado é valido com uma função inversa ) e diagnósticos. 
+
+Técnicas de recuperação de erros:
+
+Rollback: Retorna ao estado mais recente válido, descartando o processamento que gerou o estado errôneo.
+RollForward: Avança ao próximo estado válido obtido através de cálculos se possível, não perdendo parte do processamento.
+Compensação: O estado errôneo consegue mascarar o erro, permitindo prosseguir normalmente. Pode acumular mais erros e diminuir a proteção do sistema. 
+
+Tratamento de falhas: 
+
+Primeiro é feito o diagnóstico, através do salvamento de informações da falha que causou o erro.
+Depois o componente com falha pode ser isolado, com limites para propagação ou com exclusão. Então é necessário reconfigurar o sistema, redistribuindo as tarefas do componente com falha para os outros componentes que não estão com falha. E por fim o sistema é reinicializado e atualizado.
+
+

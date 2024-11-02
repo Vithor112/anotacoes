@@ -1,0 +1,45 @@
+Algoritmo de Thompson:
+
+Converte ERs em máquinas de estado não determinísticas ( transições vazias )
+
+Diagramas de transição:
+
+Usados para representar máquinas de estados. Os nós representam estados, e as arestas representam transições rotuladas por símbolos do dicionário da linguagem. Nós com asteriscos ou círculos duplos são estados de aceitação e o nó com uma seta que não possui um nodo de orige representa o estado inicial. 
+
+Um automâto finito:
+
+É uma tupla com conjunto finito de estados, um Alfabeto de símbolos, um conjunto de transições ( funções que recebem um estado e um símbolo e  retornam um estado sucessor, um estado inicial e um subconjunto de estados finais )
+
+Automâtos não deterministicos:
+
+São automâtos finitos, geralmente caracterizados por transições vazias ou por múltiplas transições de saída por símbolo ( exemplo: um nodo possui mais de 1 transição levando para diferentes nodos para o mesmo símbolo )
+
+Automâtos determinísticos:
+
+Automâtos finitos que não possuem transições vazias e possuem uma transição de saída por símbolo
+
+Algoritmo de Thompson funcionamento:
+
+Traduz cada ER mínima em um AFND, que possui um estado de entrada com transição vazia para o AFND que representa o constructo e com uma transição vazia do estado final do constructo para um estado de saída do AFND com uma transição vzia. Para ER mais complexas, constrói cada parte mínima e agrega os estados de saída aos estados de entrada de cada AFND usando transições vazias.
+
+
+Reconhedor de Símbolos Thompson: 
+
+Possui um estado de entrada que possui uma transição com o símbolo desejado para o estado final do reconhedor.
+
+Reconhecedor de Alternativa de Thompson:
+
+Possui um estado de entrada que possui 2 transições vazias, cada uma levando a um reconhecedor de símbolo. Os estados finais dos reconhecedores de símbolos levam através de uma transição vazia para um estado final comum.
+
+Reconhecedor de Concatenação de Thompson:
+
+Simplesmente concatena-se através de uma transição vazia do estado final do reconhecedor do primeiro símbolo para o estado de entrada do reconhecedor do segundo símbolo
+
+Reconhecedor de Repetição ( fechamento de kleene ) Thompson:
+
+Possui um estado de entrada que leva através de uma transição vazia ao estado final do constructo mas também a outro que por sua vez possui uma transição do símbolo repetido para outro estado que possui uma transição vazia de volta a esse mesmo estado e outra transição vazia para o estado final. 
+
+Problema das AFNDs:
+
+Não são computáveis
+

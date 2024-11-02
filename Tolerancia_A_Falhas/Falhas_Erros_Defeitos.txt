@@ -1,0 +1,88 @@
+Erro:
+
+Quando o processador chega a um estado errôneo, ou seja um estado alcançável mas não desejado. Pode escalar, gerando mais estados de erro. Quanto mais tempo passar executando, mais estados de erros podem ser gerados.
+
+Defeito:
+
+É o momento que o estado errôneo se propaga para o usuário, é percebido pelo usuário (máquina/pessoa)
+
+Falhas:
+
+Qualquer coisa que leve o processador a um estado errôneo, pode ser uma falha física ou uma falha de software
+
+Ativação da Falha:
+
+É o momento que o componente com falha é utilizado e gera o estado errôneo
+
+Princípio da Tolerância a Falhas:
+
+Através de estratégias, evitar que a falha seja ativada, e caso seja ativada, tentar restaurar o estado errôneo para um estado válido, e evitar que seja propagado novos erros
+
+Propagação de Defeitos em subsistemas: 
+
+Quanto um subsistema tem uma falha que é ativada e leva um defeito, para o sistema que a utiliza, isso será tratado como uma falha, logo pode ser tolerado com o uso correto de estratégias
+
+Latência de Falha:
+
+Período entre a ativação da falha até o momento que um estado errôneo é gerado em decorrência da falha
+
+Latência de erro:
+
+Período entre o surgimento de um estado errôneo e o momento que um defeito é gerado em decorrência disso
+
+Falha dormente:
+
+Falha que ainda não foi ativada
+
+Erros latentes:
+
+Erros que ainda não foram detectados
+
+Falhas sólidas (hard):
+
+Ativação dela é facilmente reproduzível e determinística
+
+Falha evasivas (soft):
+
+Ativação não reproduzível ou dificilmente reproduzível, não determinística
+
+Dependabilidade:
+
+Característica de um sistema ser tolerante a falhas, habilidade do sistema de evitar defeitos, de ser confiável. Isso depende dos requisitos do sistema.
+
+Atributos de Dependabilidade:
+
+O sistema não deve possuir todos e no mesmo grau, depende da requisição do sistema. Confiabilidade, disponibilidade, segurança, integridade e mantebalidade.
+
+Confiabilidade:
+
+Capacidade do sistema de atender a especificação, dentro das condições definidas na especificação, como por exemplo o período de funcionamento definido na especificação. Depende do tempo que o sistema 
+está sendo utilizado, sofre decaimento conforme o sistema é utilizado sem manuntenção
+
+Disponibilidade:
+
+Sistema com breve períodos ou nenhum em que não está funcionado. 
+
+Segurança Funcional:
+
+Ausência de consequências catastróficas
+
+Manutenibilidade:
+
+ Facilidade de realizar a manutenção do sistema, também envolve a facilidade de restaurar um problema após defeito
+
+Robustez:
+
+Capacidade do sistema de funcionar fora de condições normais
+
+Safety:
+
+Segurança funcional
+
+Security:
+
+Segurança computacional, integridade, confidencialidade e autenticidade
+
+Perfomabilidade:
+
+Defeitos levam o sistema a uma queda de desempenho e não a falta de disponibilidade, atingido através de replicação

@@ -1,0 +1,28 @@
+Forma funcional:
+
+Conjunto de símbolos  que contém símbolos não terminais 
+
+Conjunto Primeiro:
+
+Operação executada em um símbolo não terminal de uma gramática, retorna o conjunto de símbolos terminais que começam qualquer sequência derivável do símbolo não terminal. Se alguma sequência for um corpo vazio então, o símbolo vazio também participa do conjunto.
+
+Algoritmo Conjunto Primeiro Definição Matemática:
+
+Se X é terminal, então Primeiro(X) = { X }
+Se X é não-terminal e X → Y1Y2. . . Yk com k ≥ 1
+1. Acrescente 'a' em Primeiro(X)
+I Se, para algum i, a estiver em Primeiro(Yi) e
+I Se vazio estiver em todos os Primeiro(Y1) . . . Primeiro(Yi-1)
+2. Acrescente vazio em Primeiro(X)
+I Somente se vazio está em Primeiro(Yj) para todo j = 1, 2, . . . , k
+3. Se existe uma regra X → vazio
+I Acrescente vazio em Primeiro(X)
+
+Algoritmo Conjunto Primeiro: 
+
+Se X é terminal, então seu conjunto primeiro é ele mesmo. Se não é terminal então, avaliamos todas as produções de X. Se alguma das produções é X -> alphaY, sendo alpha um terminal, então alpha está no conjunto primeiro de X. Além disso, se X -> YXZ(...)alpha, sendo YXZ(...) símbolos não terminais, e alpha um símbolo terminal. Alpha está no conjunto primeiro de X se para vazio está presente no conjunto primeiro de todos os símbolos não terminais anteriores a alpha. 
+Para produções do tipo X -> YHZ, o conjunto primeiro de Y estará presente no conjunto de X, exceto o símbolo vazio. Para o símbolo vazio participar do conjunto de X, deve estar presente no conjunto primeiro de todos os símbolos não terminais da produção. Além disso, se Y tiver o símbolo vazio no conjunto primeiro. Então o conjunto primeiro de H também estará presente no conjunto primeiro de X.
+Se X -> vazio, então vazio estará presente no conjunto primeiro de X
+
+
+

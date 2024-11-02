@@ -1,0 +1,66 @@
+Blind Search Definição:
+
+Algoritmos que não usam informação sobre o estado de espaços, somente a interface black box. Sem heurística. 
+
+Breadth First Search (BFS):
+
+Expande nodos usando a ordem generação, open list é uma queue. Faz uma expansão por camadas/níveis, e sempre vai encontrar o estado objetivo com nível mais baixo primeiro. Pode ser implementado como
+tree search ou como graph search
+
+BFS com Tree Search:
+
+Troca-se a Open List para uma implementação de Queue. Faz-se também otimização Early Goal Test, que executa o test de estado objetivo logo após a geração de um novo nodo, o que poupa de termos que navegar pela última camada que geralmente é siginificativamente grande para impactar a velocidade do algoritmo. Para manter a corretude do mesmo também é importante testar se o estado inicial é um estado objetivo, dado que essa otimização evita que esse teste ocorra. 
+
+BFS com Graph Search:
+
+Além das otimizações do BFS como Tree Search, também implementamos o closed list como um Hash Set, e fazemos o test de duplicação logo após a geração do novo nodo e do teste de estado objetivo. 
+
+Critérios BFS com Tree Search:
+
+É semi completo, pois como toda a solução é um caminho finito e o BFS investiga todo os caminhos dos menores para os maiores, uma hora ele será investigado. Porém não é completo pois pode cair em ciclos em casos que não haja uma solução. É ótimo se as ações tem custo unitários, dado que sempre encontrará a solução com menor comprimento. Sua complexidade de tempo e espaço é O(b^d), onde b é o fator de ramificação e d é o tamanho da menor solução possível
+
+Critérios BFS com Tree Search:
+
+É semi completo, pois como toda a solução é um caminho finito e o BFS investiga todo os caminhos dos menores para os maiores, uma hora ele será investigado. Porém não é completo pois pode cair em ciclos em casos que não haja uma solução. É ótimo se as ações tem custo unitários, dado que sempre encontrará a solução com menor comprimento. Sua complexidade de tempo e espaço é O(b^d), onde b é o fator de ramificação e d é o tamanho da menor solução possível
+
+Critérios BFS com Graph Search:
+
+É completo, pois como toda a solução é um caminho finito e o BFS investiga todo os caminhos dos menores para os maiores, uma hora ele será investigado e também evita ciclos. É ótimo se as ações tem custo unitários, dado que sempre encontrará a solução com menor comprimento. Sua complexidade de tempo e espaço é O(b^d), onde b é o fator de ramificação e d é o tamanho da menor solução possível
+
+Qual é melhor? BFS Tree Search ou BFS Graph Search?
+
+Quase sempre optaremos por Graph Search pois é completo e tem a mesma complexidade que a variação feita com Tree Search
+
+
+Uniform Cost Search (UCS):
+
+Sempre expande o nodo com menor caminho com menor custo. Geralmente implementado com Graph Search, com Priority Queue (MinHeap) para o open list e um Hash Set para o closed list.
+
+Critério de UCS para as 2 variações:
+
+A versão em Tree Search não é Semi Completa pois pode haver ciclos com caminhos com custo 0. 
+A versão em graph search é completo, ótimo. Complexidade de tempo e espaço tem uma notação complexa e exagera muito a complexidade típica do algoritmo 
+
+Depth First Search (DFS):
+
+Expande o úlitmo nodo expandido. Open List implementado como uma queue e geralmente é usado o Tree 
+Search para implementa-lo.
+
+Critérios DFS:
+
+Não é completo, nem semi-completo, nem ótimo, pois pode cair em cíclos. Em espaços acíclicos, é completo. Não tem uma complexidade de tempo boa, tendo um pior caso em que gera todos os caminhos possíveis, exponencial. Porém tem uma complexidade de espaço linear. 
+
+DFS Recursivo:
+
+Geralmente a implementação mais usada por ser mais eficiente. Nela não é necessário uma open list pois o stack da cpu é usado para isso implicitamente. O algoritmo é simples. Checa se o estado recebido é um estado objetivo e se for o retorna. Caso não, chama a si mesmo para cada estado sucessor e checa se em alguma chamada foi retornado algum estado, se for o retorna, se não retorna null. 
+
+Iterative DFS: 
+
+É um DFS, porém limitado a uma profundidade d. Ou seja, só pode investigar caminhos com d nodos, e depois passa para o próximo. d começa em 0 e a cada iteração tem seu valor aumentado.
+
+Vantagens do Iterative DFS: 
+
+Combina a semi-completude do BFS e otimalidade (em casos com ações unitárias) e possui a complexidade de espaço linear do DFS com um pequeno incremento da complexidade de tempo em relação ao BFS 
+
+
+
