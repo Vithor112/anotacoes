@@ -1,0 +1,60 @@
+Tipos de redundância: 
+
+Há a redundância com replicação de componentes (hardware) ou redundância sem replicação de componentes. 
+
+Quais são os tipos de redundância sem replicação de componente?
+
+A redundância de software;
+A redundância de tempo;
+A redundância de informação;
+
+Quais o impacto da redundância nos sistemas?
+
+Pode impactar no desempenho, na potência consumida ou no custo e área. 
+
+Quais são os tipos de redundância de componentes
+
+A redundância estática (passiva)
+A redundância dinâmica (ativa)
+A redundância híbrida 
+A redundância modular múltiplca (NMR) 
+
+Características da redundância passiva:
+
+Mascara falhas, não requer ação do sistema e não indica erro.
+
+O que é NMR: 
+
+Tipo de redundância modular múltipla, em que se usa N componentes, e faz-se uma votação para decidir o retorno, que pode ser decidido pela maioria ou por valor médio.
+
+O que é TMR:
+
+É um caso especial do NMR, em que se usa 3 componentes. Mascara falha de um componente. O único ponto de falha é o votador, que geralmente é bem simples e por isso bem confiável. Porém como a redundância aumenta o número de componentes do sistema, a confiabilidade do sistema cai de forma mais aguda conforme o tempo em comparação a sistemas sem redundância, pois tem mais componentes para falhar.
+
+Características redundância ativa:
+
+Detecta falha e a recupera, não mascara. Porém necessita de um tempo para realizar a recuperação. Feito para sistemas que toleram resultados errados por um curto período de tempo. 
+
+Formas de implementar redundância ativa: 
+
+Com Componentes auto verificadores. Para isso temos um componente adicional que verifica a saída esperada e decidi se ela está correta ou não. Esse verificador pode calcular a saída a partir da entrada (custoso) que depois é comparada por um comparador externo ou se possível, verificar se a saída faz sentido para a entrada, usando uma função inversa. E com isso decide se emite um sinal de erro ou não para realizar a recuperação.
+
+Formas de implementar redudância híbrida:
+
+Concatena diferentes módulos com componentes auto verificadores. E transmite a saída de módulos que não emitiram erro. Assim sem ter transmitir resultados errôneos até a recuperação dos módulos com defeitos. 
+
+Redundância de Software:
+
+Usadas para tolerar erros de software, replica componentes de software.
+
+Como implementar redundância de software?
+
+Verificação de consistência. Testes de aceitação. Tratamentos de exceção. Diversidade no projeto e implementação. Blocos de recuperação.
+
+O que é Programação n-versões? 
+
+Compara-se as saída de diferentes versões do mesmo programa. Facilita reconhecer erros durante a fases de testes, e também aumenta tolerância a falhas permanentes e intermitentes, porque serão detectadas ao comparar a versões pré-estabelecidas e também e a falhas externas do compilador e do sistema operacional. Porém, isso aumenta nos custos do desenvolvimento, e também não garante que não há falhas, pois podem persistir em diferentes versões. Também não há prova formal que isso aumente a confiabilidade. Há também a dificuldade de sincronizar as diferentes execuções e também determinar o número de versões. 
+
+Redudância temporal, o que é?
+
+Repetir a computação no tempo, para detectar falhas transientes, pois não afetam 2 computações separadas no tempo da mesma maneira, e também para falhas permanentes. Não há custo no hardware, mas há custo no desempenho. 

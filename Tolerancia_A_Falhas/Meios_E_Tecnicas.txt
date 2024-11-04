@@ -14,6 +14,10 @@ Prevenção de falhas definição:
 
 Utilização de melhores técnicas e componentes para evitar a introdução de falhas.
 
+Tolerância a falhas definição:
+
+Fornecer o serviço esperado mesmo na presença de falhas. 
+
 Técnicas de TF:
 
 Baseada em 2 branches, detecção de erros (antes do defeito) e após, a recuperação do erro.
@@ -37,4 +41,15 @@ Tratamento de falhas:
 Primeiro é feito o diagnóstico, através do salvamento de informações da falha que causou o erro.
 Depois o componente com falha pode ser isolado, com limites para propagação ou com exclusão. Então é necessário reconfigurar o sistema, redistribuindo as tarefas do componente com falha para os outros componentes que não estão com falha. E por fim o sistema é reinicializado e atualizado.
 
+Manuntenção definição:
+
+Manuntenção envolve um agente externo. E pode ser feito para reparar ou modificar o produto.
+
+Tipos de reparos:
+
+Pode ser corretivo, para remover falhas reportadas ou preventivo para remover falhas latentes.
+
+Tipos de modificações:
+
+Pode ser adaptativa, para adaptar o sistema para uma mudança de ambiente ou expansiva, para incrementar a funcionalidade do sistema. 
 
