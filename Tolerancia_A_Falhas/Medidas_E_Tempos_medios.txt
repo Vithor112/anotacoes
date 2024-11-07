@@ -1,0 +1,96 @@
+O que é taxa de defeitos?
+
+Número esperado de defeitos em um dado período de tempo (failure rate), não é constante, se modifica conforme o tempo de uso
+
+O que é hazard function? 
+
+Recebe uma medida de tempo e retorna a taxa de defeitos para aquele período.
+
+O que é a curva da banheira no contexto de taxa de defeitos?
+
+É a representação gráfica de como a taxa de defeitos normalmente se comporta. Ela possui um valor alto no início, denominado mortalidade infantil, um valor quase constante durante seu tempo de uso até que atinge a fase de envelhecimento onde a taxa de defeitos volta a subir de forma rápida. 
+
+Causas da Mortalidade infantil no contexto da taxa de defeitos e técnica para evita-la
+
+Causada por componentes fracos ou mal fabricados. Burn-in é uma técnica de remoção de componentes fracos, através de uma operação acelerada dos componentes, removendo os que não sobreviverem. 
+
+Causas da Envelhecimento no contexto da taxa de defeitos e técnicas para evita-la
+
+Causado pelo desgaste físico do componente. Técnicas possíveis envolvem substituição de componentes antes de atingirem a fase de envelhecimento, ou projetar o circuito para retardar o envelhecimento com ajustes de tensão e frequência de operação.
+
+O que é a unidade de medida FIT? Failures In Time?
+
+Unidade de medida que representa Falhas por bilhão de horas de operação
+
+O que é a taxa de defeitos constante?
+
+Representada por um lambda, é a taxa de defeitos durante o tempo de vida útil, geralmente em defeitos por hora. 
+
+Software também pode passar por envelhecimento? 
+
+Sim, através de alterações nas plataformas e obsolescências dos programas.
+
+Quais são as hipóteses tradicionais e onde elas podem ser aplicadas? 
+
+São de que as falhas são raras e randômicas  e não correlacionadas entre si. Só é aplicavel a sistemas de hardware de baixa complexidade. 
+
+
+O que é mean time to failure (MTTF) e como é calculado?
+
+Tempo esperado até a primeira ocorrência de defeito. Executa-se N sistemas, anotando o tempo ti, de cada um para levar a falha. Então tira-se a média de todos os Ti coletados. Isso também resulta no inverso da taxa de defeitos constante. Pode aparecer como MTTI ( Mean time to interrupt )
+
+O que é mean time to repair (MTTR)?
+
+Tempo médio para reparo do sistema. Para isso injeta-se falha no sistema, medindo o tempo que leva para o reparo. Para calcular usa-se o inverso da taxa de reparos.
+
+O que é a taxa de reparos?
+
+Representado pela letra grega Mi, diz o número de reparos por hora. Para calcular-se, pega-se 1 sistema, injeta-se n falhas nele e anota-se o tempo de reparo para cada falha. Depois tira-se a média do tempo de reparo de cada falha e inverte o resultado. 
+
+O que é mean time between failures (MTBF) ?
+
+Tempo médio entre defeitos do sistema.  É a soma do MTTR e MTTF. Geralmente é muito parecido com o MTTF, visto que tempo de operações geralmente são maiores que o tempo de reparo.
+
+Quando o MTTF, MTTR, e o MFBF são válidos para um sistema?
+
+Apenas no período de vida útil. 
+
+O que é confiabilidade no contexto de medidas?
+
+É a medidade de probabilidade de que um sistema funcione corretamente durante um intervalo de tempo. Dado pela função R(t)
+
+Relação entre a confiabilidade e o tempo:
+
+Dado pela  exponential failure law, a confiabilidade varia exponencialmente em função do tempo. 
+
+Fórmula matemática da confiabilidade e relação com a taxa de defeitos constante
+
+R(t) = e ^ (- taxa de defeitos * t ) para taxa de defeitos constantes
+
+O que é a Distribuição de Weibull:
+
+Dá a confiabilidade para casos em que a taxa de  defeitos varia com o tempo, modela artefatos que a confiabilidade pode aumentar com o tempo. 
+
+Fórmula matemática da confiabilidade e relação com a taxa de defeitos variável:
+
+R(t) = e ^ (- taxa de defeitos * t ) ^ alpha. Onde alpha é maior que 1 se a taxa de defeito cai com o tempo (logo a confiabilidade diminui de forma não acentuada) E menor que 1 caso a taxa de defeitos aumente linearmente ( logo a confiabilidade cai muito rapidamente )
+
+O que é a medida de Disponibilidade?
+
+Probabilidade do sistema estar operacional no instante t, ou seja da alternância entre funcionamento e reparo. Dado pela função A(t)
+
+Definição matemática da medida da disponibilidade:
+
+A(t) = t op / (t op+ treparo) Onde t op = Tempo de operação e treparo = tempo de reparo. Outra forma é A(t) = MTTF / (MTTF + MTTR)
+
+Medida de de cobertura: 
+
+habilidade do sistema de tolerar falhas e se recuperar dela. Dá a probabilidade que dada uma falha o sistema se recupere. 
+
+Como é feito o calculo:
+
+Listagem das falhas possíveis e falhas que o sistema pode tolerar e então calcula-se o percentual. A modelagem é feita através de cadeias de markov. 
+
+
+
+

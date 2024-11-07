@@ -1,0 +1,23 @@
+O que são Modelos combinatórios?
+
+São modelos que usam técnicas probabilísticas. Enumere-se as diferentes maneiras de um sistema permancer operacional e suas probabilidades. Possui 2 modelos comuns. O em série e os em paralelo.
+
+O que é o modelo combinatório em série?
+
+Usado em sistemas onde cada elemento dele deve operar corretamente para que o sistema  opere corretamente. Ou seja sem redudância. Sua confiabilidade envolve a probabilidade que todos os componentes operem corretamente. Dado por R(t) = Produto Ri(t) ou seja o produto da confiabilidade de todos os componentes do sistema
+
+O que é o modelo combinatório paralelo?
+
+Usado em sistemas onde apenas um elemento no sistema precisa operar corretamente para o sistema operar corretamente. Ou seja possui redundância. Sua confiabilidade se dá pela subtração de 1 pela não confiabilidade (Q(t)) que dá a chance de todos os componentes falharem. Isso é calculado através do produto da não confiabilidade de todos os componentes.
+
+O que são Sistemas MooN (M-out-of-N)?
+
+Usado para sistemas onde M de um total de N componentes deve operar corretamente para o sistema operar corretamente. 
+
+Desvantagens dos modelos combinatórios:
+
+Fórmulas complexas, não incorpora-se reparos no modelo nem a cobertura. 
+
+O que são Modelos de Markov (CTMC)? 
+
+
